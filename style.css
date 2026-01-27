@@ -70,14 +70,26 @@ figcaption {
 
 /* Weiter / Zurück Buttons */
 .station-nav {
+  position: sticky;
+  top: 0;
+  background: white;
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
 }
 
+/* Buttons */
 .station-nav a {
-  background: #2ecc71;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background: #f0f0f0;
+  color: #000;
 }
+
 
 .station-nav a:hover {
   background: #27ae60;
