@@ -95,6 +95,10 @@ figcaption {
   background: #555;
 }
 
+main {
+  padding-top: 1rem;
+}
+
 main section {
   margin-bottom: 2rem;
 }
