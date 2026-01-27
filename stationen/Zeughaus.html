@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -10,10 +11,10 @@
 
 <header>
   <a href="../index.html">← Zur Startseite</a>
-  <h1>🏰 Station 1: Kehlturm</h1>
+  <h1>Zeughaus</h1>
 </header>
 
-<main>
+<main data-station="Zeughaus">
 
   <!-- Wichtige Infos -->
   <section class="infos">
@@ -29,23 +30,54 @@
     
     <figure>
       <img src="../assets/bilder/kehlturm1.jpg" alt="Kehlturm Außenansicht">
-      <figcaption>Kehlturm – Außenansicht</figcaption>
+      <figcaption>Zeughaus – Außenansicht</figcaption>
     </figure>
 
     <figure>
       <img src="../assets/bilder/kehlturm2.jpg" alt="Kehlturm Innenansicht">
-      <figcaption>Kehlturm – Innenansicht</figcaption>
+      <figcaption>Zeughaus – Innenansicht</figcaption>
     </figure>
     
   </section>
-
-  <!-- Navigation -->
-  <section class="station-nav">
-    <a href="letzte-station.html">⬅️ Zurück</a>
-    <a href="naechste-station.html">➡️ Weiter</a>
-  </section>
+  
+<section class="station-nav">
+  <a class="btn-zurueck" href="#">Zurück</a>
+  <a class="btn-weiter" href="#">Weiter</a>
+</section>
 
 </main>
 
+<script src="../touren.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Aktuelle Station
+  const main = document.querySelector("main");
+  const stationName = main.dataset.station;
+
+  // Aktuelle Tour aus URL-Parameter
+  const params = new URLSearchParams(window.location.search);
+  let aktuelleTour = params.get("tour") || "45min-innenstadt-kehlturm";
+
+  // Reihenfolge der Stationen für die Tour
+  const stationen = touren[aktuelleTour];
+  const index = stationen.indexOf(stationName);
+
+  // Buttons auswählen
+  const btnZurueck = document.querySelector(".btn-zurueck");
+  const btnWeiter = document.querySelector(".btn-weiter");
+
+  // Links setzen
+  if(index > 0) btnZurueck.href = stationen[index - 1] + ".html?tour=" + aktuelleTour;
+  if(index < stationen.length - 1) btnWeiter.href = stationen[index + 1] + ".html?tour=" + aktuelleTour;
+
+  // Optional: Buttons ausblenden, wenn kein Ziel
+  if(index === 0) btnZurueck.style.visibility = "hidden";
+  if(index === stationen.length - 1) btnWeiter.style.visibility = "hidden";
+
+});
+</script>
+
+  
 </body>
 </html>
