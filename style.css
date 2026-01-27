@@ -1,12 +1,84 @@
+/* Grundlayout */
 body {
   font-family: system-ui, sans-serif;
   margin: 0;
   padding: 1.5rem;
-  background: #ffffff;
+  background: #fdfdfd;
   color: #222;
   line-height: 1.6;
 }
 
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+/* Navigation Buttons */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  background: #3498db;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  text-align: center;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #2980b9;
+}
+
+/* Absätze */
+p {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+/* Bilder */
+figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 0.6rem;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Weiter / Zurück Buttons */
+.station-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.station-nav a {
+  background: #2ecc71;
+}
+
+.station-nav a:hover {
+  background: #27ae60;
 }
