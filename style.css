@@ -82,3 +82,37 @@ figcaption {
 .station-nav a:hover {
   background: #27ae60;
 }
+
+main section {
+  margin-bottom: 2rem;
+}
+
+main h2 {
+  color: #34495e;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+main ul {
+  list-style: none;
+  padding: 0;
+}
+
+main li {
+  margin-bottom: 0.8rem;
+}
+
+main a {
+  display: inline-block;
+  text-decoration: none;
+  background: #3498db;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.6rem;
+  transition: background 0.3s;
+}
+
+main a:hover {
+  background: #2980b9;
+}
+
