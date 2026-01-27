@@ -40,13 +40,43 @@
       <figcaption>Kehlturm – Innenansicht</figcaption>
     </figure>
     
-  </section>
+<script src="../touren.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-  <!-- Navigation -->
-  <section class="station-nav">
-    <a href="letzte-station.html">⬅️ Zurück</a>
-    <a href="naechste-station.html">➡️ Weiter</a>
-  </section>
+  // Aktuelle Station
+  const main = document.querySelector("main");
+  const stationName = main.dataset.station;
+
+  // Tour auswählen
+  // Optional: Tour per URL-Parameter: ?tour=45min-innenstadt
+  const params = new URLSearchParams(window.location.search);
+  let aktuelleTour = params.get("tour") || "45min-innenstadt";
+
+  // Reihenfolge der Stationen auslesen
+  const stationen = touren[aktuelleTour];
+  const index = stationen.indexOf(stationName);
+
+  // Buttons finden
+  const btnZurueck = document.querySelector(".btn-zurueck");
+  const btnWeiter = document.querySelector(".btn-weiter");
+
+  // Links setzen
+  if(index > 0) btnZurueck.href = stationen[index - 1] + ".html?tour=" + aktuelleTour;
+  if(index < stationen.length - 1) btnWeiter.href = stationen[index + 1] + ".html?tour=" + aktuelleTour;
+
+  // Optional: Buttons ausblenden, wenn kein Ziel
+  if(index === 0) btnZurueck.style.visibility = "hidden";
+  if(index === stationen.length - 1) btnWeiter.style.visibility = "hidden";
+
+});
+</script>
+
+    <section class="station-nav">
+  <a class="btn-zurueck" href="#">⬅️ Zurück</a>
+  <a class="btn-weiter" href="#">➡️ Weiter</a>
+</section>
+
 
 </main>
 
