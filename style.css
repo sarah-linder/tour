@@ -71,6 +71,7 @@ figcaption {
 /* Weiter / Zurück Buttons */
 .station-nav {
   position: static;
+  background: transparent;
 }
 
 /* Buttons */
