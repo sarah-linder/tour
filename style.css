@@ -323,3 +323,32 @@ main a:hover {
   text-decoration: none;
 }
 
+/* FAQ */
+.faq {
+  margin: 2rem 1rem;
+}
+
+.faq h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: #34495e;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+}
+
+.faq-item {
+  margin-top: 1rem;
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+}
+
+.faq-item p {
+  margin-left: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
