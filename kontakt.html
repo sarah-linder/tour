@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontakt & Tourguides</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html">← Zur Startseite</a>
+  <h1>Kontakt & Tourguides</h1>
+</header>
+
+<main>
+  <!-- Tourguides -->
+  <section class="tourguides">
+    <h2>Unsere Tourguides</h2>
+    <div class="guides-container">
+      <div class="guide">
+        <img src="assets/bilder/guide1.jpg" alt="Tourguide Anna Müller">
+        <h3>Anna Müller</h3>
+        <p>Expertin für Innenstadt- und Kulturführungen. Spricht Deutsch und Englisch.</p>
+        <p>Email: <a href="mailto:anna@touren.de">anna@touren.de</a><br>
+           Tel.: <a href="tel:+491234567890">+49 123 4567890</a></p>
+      </div>
+      <div class="guide">
+        <img src="assets/bilder/guide2.jpg" alt="Tourguide Ben Schmidt">
+        <h3>Ben Schmidt</h3>
+        <p>Fokus auf historische Themen und Biertouren. Spricht Deutsch.</p>
+        <p>Email: <a href="mailto:ben@touren.de">ben@touren.de</a><br>
+           Tel.: <a href="tel:+491234567891">+49 123 4567891</a></p>
+      </div>
+      <div class="guide">
+        <img src="assets/bilder/guide3.jpg" alt="Tourguide Clara Weber">
+        <h3>Clara Weber</h3>
+        <p>Schützentouren und Stadtgeschichte. Spricht Deutsch und Französisch.</p>
+        <p>Email: <a href="mailto:clara@touren.de">clara@touren.de</a><br>
+           Tel.: <a href="tel:+491234567892">+49 123 4567892</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback & Kontaktformular -->
+  <section class="kontaktformular">
+    <h2>Kontakt / Feedback</h2>
+    <form action="#" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="tour">Tour (optional)</label>
+      <input type="text" id="tour" name="tour">
+
+      <label for="nachricht">Nachricht / Feedback</label>
+      <textarea id="nachricht" name="nachricht" rows="5"></textarea>
+
+      <label for="bewertung">Bewertung (Sterne)</label>
+      <select id="bewertung" name="bewertung">
+        <option value="">Bitte wählen</option>
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="1">★☆☆☆☆</option>
+      </select>
+
+      <button type="submit">Absenden</button>
+    </form>
+  </section>
+
+</main>
+
+</body>
+</html>
