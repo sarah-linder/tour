@@ -172,22 +172,29 @@ main a:hover {
   top: 100%; 
   left: 0; 
   list-style: none;
-  margin: 0.5rem 0 0 0;
+  margin: 0;
   padding: 0;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  background: #ddd;
+  width: 200px;
+  border-radius: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.menu-list li{
+  margin: 0; 
+  padding: 0;
 }
 
 .menu-list li a {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   color: #000;
   text-decoration: none;
+  border-radius: 0;
 }
 
 .menu-list li a:hover {
-  background: #eee;
+  background: #ccc;
 }
 
 /* Begrüßung */
