@@ -59,6 +59,7 @@ h1 {
   color: #333;       /* dunkelgrau */
   font-weight: 500;
   padding: 0;
+  background: #eee;
 }
 
 .nav-text:hover {
