@@ -1,94 +1,71 @@
-/* Begrüßung */
-.begrüßung {
-  margin: 2rem 1rem;
-  font-size: 1.2rem;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Tourenübersicht</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* Slider */
-.touren-slider {
-  position: relative;
-  margin: 2rem auto;
-  max-width: 600px;
-  text-align: center;
-}
+<header>
+  <h1>Unsere Touren</h1>
+</header>
 
-.touren-slider .slide {
-  display: none;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #f5f5f5;
-}
+<!-- Ausklappmenü -->
+<nav class="menu">
+  <button class="menu-toggle">☰</button>
+  <ul class="menu-list">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="touren.html">Touren</a></li>
+    <li><a href="feedback.html">Feedback / Bewertungen</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="impressum.html">Rechtliches</a></li>
+  </ul>
+</nav>
 
-.touren-slider .slide.active {
-  display: block;
-}
+<main>
+  <section class="touren-übersicht">
+    <div class="tour">
+      <h2>45min Innenstadt – Start Kehlturm</h2>
+      <p>Kurze Rundtour durch die Innenstadt mit allen Highlights. Perfekt für erste Eindrücke.</p>
+      <a href="stationen/Kehlturm.html?tour=45min-innenstadt-kehlturm" class="btn-info">Tour starten</a>
+    </div>
 
-.touren-slider .btn-info {
-  display: inline-block;
-  margin-top: 1rem;
-  background: #333;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  text-decoration: none;
-}
+    <div class="tour">
+      <h2>45min Innenstadt – Start Tourist-Info</h2>
+      <p>Die gleiche 45min Tour, aber vom anderen Startpunkt aus. Ideal für individuelle Planung.</p>
+      <a href="stationen/Tourist-Info.html?tour=45min-innenstadt-tourist-info" class="btn-info">Tour starten</a>
+    </div>
 
-.prev-slide,
-.next-slide {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 999px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
+    <div class="tour">
+      <h2>90min Innenstadt – Start Kehlturm</h2>
+      <p>Ausführliche Tour durch die Innenstadt, alle wichtigen Stationen inklusive Geschichten.</p>
+      <a href="stationen/Kehlturm.html?tour=90min-innenstadt-kehlturm" class="btn-info">Tour starten</a>
+    </div>
 
-.prev-slide { left: -2rem; }
-.next-slide { right: -2rem; }
+    <div class="tour">
+      <h2>90min Innenstadt – Start Obertor</h2>
+      <p>Die 90min Tour von der anderen Seite der Innenstadt starten.</p>
+      <a href="stationen/Obertor.html?tour=90min-innenstadt-obertor" class="btn-info">Tour starten</a>
+    </div>
 
-/* FAQ-Button */
-.faq-link {
-  text-align: center;
-  margin: 2rem 0;
-}
+    <div class="tour">
+      <h2>45min LAGA</h2>
+      <p>Spezielle Tour über das LAGA-Gelände, ideal für einen kurzen Rundgang.</p>
+      <a href="stationen/LAGA-Start45.html?tour=45min-LAGA" class="btn-info">Tour starten</a>
+    </div>
 
-.faq-link .btn-info {
-  background: #333;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  text-decoration: none;
-}
+    <div class="tour">
+      <h2>90min LAGA</h2>
+      <p>Längere Tour über das LAGA-Gelände mit allen Stationen.</p>
+      <a href="stationen/LAGA-Start90.html?tour=90min-LAGA" class="btn-info">Tour starten</a>
+    </div>
+  </section>
+</main>
 
-/* Kontaktformular */
-.kontaktformular {
-  margin: 2rem 1rem;
-}
+<script src="assets/js/menu.js"></script>
 
-.kontaktformular label {
-  display: block;
-  margin-top: 1rem;
-}
-
-.kontaktformular input,
-.kontaktformular textarea {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.3rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.kontaktformular button {
-  margin-top: 1rem;
-  background: #333;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-}
+</body>
+</html>
