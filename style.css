@@ -188,13 +188,14 @@ main a:hover {
 .menu-list li a {
   display: block;
   padding: 0.8rem 1rem;
-  color: #333;
+  background: #333;   /* Hintergrund auf Button-Farbe setzen */
+  color: white;       /* Textfarbe weiß */
   text-decoration: none;
-  border-radius: 0;
+  border-radius: 0;   /* keine Abrundung für Block-Effekt */
 }
 
 .menu-list li a:hover {
-  background: #ccc;
+  background: #555;   /* Hover leicht heller, wie bei den Buttons */
 }
 
 /* Begrüßung */
