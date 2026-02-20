@@ -1,4 +1,6 @@
-/* Grundlayout */
+/* =========================
+   Grundlayout & Body
+========================= */
 body {
   font-family: system-ui, sans-serif;
   margin: 0;
@@ -20,38 +22,80 @@ h1 {
   color: #2c3e50;
 }
 
-/* Navigation Buttons */
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* =========================
+   Top-Navigation Leiste
+   (Startseite, Touren, FAQ links; Button "Jetzt buchen" Mitte; Rechtliches rechts)
+========================= */
+.top-nav {
+  background: #eee;          /* hellgrau */
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-nav a {
-  display: block;
+.top-nav nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Link-Gruppen links / rechts */
+.nav-left, .nav-right {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Textlinks (nur Text, kein Button) */
+.nav-text {
   text-decoration: none;
-  background: #3498db;
-  color: #fff;
-  padding: 1rem;
-  border-radius: 0.6rem;
-  text-align: center;
+  color: #333;       /* dunkelgrau */
   font-weight: 500;
+  padding: 0;
+}
+
+.nav-text:hover {
+  color: #555;
+}
+
+/* Button in der Mitte */
+.btn-buchen {
+  background: #333;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
   transition: background 0.3s;
 }
 
-nav a:hover {
-  background: #2980b9;
+.btn-buchen:hover {
+  background: #555;
 }
 
-/* Absätze */
+/* Platz schaffen für feste Leiste */
+main {
+  padding-top: 60px;
+}
+
+/* =========================
+   Absätze & Text
+========================= */
 p {
   margin-bottom: 1.2rem;
   font-size: 1rem;
 }
 
-/* Bilder */
+/* =========================
+   Bilder / Figuren
+========================= */
 figure {
   margin: 1.5rem 0;
   text-align: center;
@@ -68,62 +112,45 @@ figcaption {
   margin-top: 0.5rem;
 }
 
-/* Weiter / Zurück Buttons */
-.station-nav {
-  position: static;
-  background: transparent;
-}
-
-/* Buttons */
-.station-nav a {
+/* =========================
+   Buttons allgemein
+   (Touren, Slideshow, FAQ)
+========================= */
+main a,
+.faq a.btn-info,
+.touren-slider .btn-info,
+.faq-link .btn-info,
+.kontaktformular button {
+  display: inline-block;
   background: #333;
   color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
   text-decoration: none;
-  padding: 0.5rem 1.1rem;
-  border-radius: 999px; /* schön rund */
   font-weight: 600;
-}
-
-
-.station-nav a:hover {
-  background: #555;
-}
-
-main {
-  padding-top: 80px;
-}
-
-main section {
-  margin-bottom: 2rem;
-}
-
-main h2 {
-  color: #34495e;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-main ul {
-  list-style: none;
-  padding: 0;
-}
-
-main li {
-  margin-bottom: 0.8rem;
-}
-
-main a {
-  display: inline-block;
-  text-decoration: none;
-  background: #333;
-  color: #fff;
-  padding: 0.8rem 1.2rem;
-  border-radius: 0.6rem;
   transition: background 0.3s;
 }
 
-main a:hover {
-  background: #2980b9;
+main a:hover,
+.faq a.btn-info:hover,
+.touren-slider .btn-info:hover,
+.faq-link .btn-info:hover,
+.kontaktformular button:hover {
+  background: #555;
+}
+
+/* FAQ-Buttons kleiner */
+.faq a.btn-info {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Weiter / Zurück Buttons
+========================= */
+.station-nav {
+  position: static;
+  background: transparent;
 }
 
 .btn-zurueck,
@@ -131,7 +158,6 @@ main a:hover {
   position: fixed;
   top: 1rem;
   z-index: 1000;
-
   background: #333;
   color: white;
   padding: 0.6rem 1rem;
@@ -140,71 +166,12 @@ main a:hover {
   font-weight: 600;
 }
 
-/* Links positionieren */
-.btn-zurueck {
-  left: 1rem;
-}
+.btn-zurueck { left: 1rem; }
+.btn-weiter { right: 1rem; }
 
-/* Rechts positionieren */
-.btn-weiter {
-  right: 1rem;
-}
-
-.menu {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1001;
-}
-
-.menu-toggle {
-  background: #333;
-  color: white;
-  border: none;
-  padding: 0.5rem 0.8rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.menu-list {
-  display: none; /* ausgeklappt nur bei Klick */
-  position: absolute; 
-  top: 100%; 
-  left: 0; 
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: #333;
-  width: 200px;
-  border-radius: 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.menu-list li{
-  margin: 0; 
-  padding: 0;
-}
-
-.menu-list li a {
-  display: block;
-  padding: 0.8rem 1rem;
-  background: #333;   /* Hintergrund auf Button-Farbe setzen */
-  color: white;       /* Textfarbe weiß */
-  text-decoration: none;
-  border-radius: 0;   /* keine Abrundung für Block-Effekt */
-}
-
-.menu-list li a:hover {
-  background: #555;   /* Hover leicht heller, wie bei den Buttons */
-}
-
-/* Begrüßung */
-.begrüßung {
-  margin: 2rem 1rem;
-  font-size: 1.2rem;
-}
-
-/* Slider */
+/* =========================
+   Slideshow
+========================= */
 .touren-slider {
   position: relative;
   margin: 2rem auto;
@@ -224,16 +191,6 @@ main a:hover {
   display: block;
 }
 
-.touren-slider .btn-info {
-  display: inline-block;
-  margin-top: 1rem;
-  background: #333;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  text-decoration: none;
-}
-
 .prev-slide,
 .next-slide {
   position: absolute;
@@ -250,80 +207,9 @@ main a:hover {
 .prev-slide { left: -2rem; }
 .next-slide { right: -2rem; }
 
-/* FAQ-Button */
-.faq-link {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.faq-link .btn-info {
-  background: #333;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  text-decoration: none;
-}
-
-/* Kontaktformular */
-.kontaktformular {
-  margin: 2rem 1rem;
-}
-
-.kontaktformular label {
-  display: block;
-  margin-top: 1rem;
-}
-
-.kontaktformular input,
-.kontaktformular textarea {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.3rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.kontaktformular button {
-  margin-top: 1rem;
-  background: #333;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Tourenübersicht */
-.touren-übersicht {
-  margin: 2rem 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.touren-übersicht .tour {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  background: #f5f5f5;
-  text-align: center;
-}
-
-.touren-übersicht .tour h2 {
-  margin-top: 0;
-}
-
-.touren-übersicht .btn-info {
-  display: inline-block;
-  margin-top: 1rem;
-  background: #333;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  text-decoration: none;
-}
-
-/* FAQ */
+/* =========================
+   FAQ
+========================= */
 .faq {
   margin: 2rem 1rem;
 }
@@ -352,29 +238,11 @@ main a:hover {
   line-height: 1.5;
 }
 
-/* FAQ-Buttons einheitlich, kleiner als Slideshow-Touren-Buttons */
-.faq a.btn-info {
-  background: #333;       /* gleiche Farbe wie Touren-Buttons */
-  color: white;
-  padding: 0.4rem 0.8rem; /* kleiner als Touren-Buttons */
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.faq a.btn-info:hover {
-  background: #555;
-}
-
-/* Tourguides */
+/* =========================
+   Tourguides
+========================= */
 .tourguides {
   margin: 2rem 1rem;
-}
-
-.tourguides h2 {
-  font-size: 1.5rem;
-  color: #34495e;
-  margin-bottom: 1rem;
 }
 
 .guides-container {
@@ -400,8 +268,7 @@ main a:hover {
 }
 
 .guide h3 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
   color: #2c3e50;
   font-size: 1.2rem;
 }
@@ -411,7 +278,9 @@ main a:hover {
   font-size: 0.95rem;
 }
 
-/* Kontaktformular */
+/* =========================
+   Kontaktformular
+========================= */
 .kontaktformular {
   margin: 2rem 1rem;
 }
@@ -437,179 +306,4 @@ main a:hover {
   border-radius: 4px;
   border: 1px solid #ccc;
   font-size: 1rem;
-}
-
-.kontaktformular button {
-  margin-top: 1rem;
-  background: #333;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-}
-
-.kontaktformular button:hover {
-  background: #555;
-}
-
-/* Top-Navigation Leiste */
-.top-nav {
-  background: #eee;        /* leicht grau hinterlegt */
-  padding: 0.5rem 1rem;
-  position: fixed;         /* oben bleiben */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-}
-
-/* Flexbox für Links + Button */
-/* Top-Navigation Leiste */
-.top-nav {
-  background: #eee;        /* leicht grau hinterlegt */
-  padding: 0.5rem 1rem;
-  position: fixed;         /* oben bleiben */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-}
-
-/* Flexbox für Links + Button */
-.top-nav nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Link-Liste links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 0.3rem 0.5rem;
-  transition: color 0.3s, background 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #555;
-}
-
-.nav-text {
-  text-decoration: none;
-  color: #333;        /* dunkler Text */
-  font-weight: 500;
-  padding: 0;          /* keine Hintergrundfarbe */
-}
-
-.nav-text:hover {
-  color: #555;        /* beim Hover leicht dunkler */
-  background: transparent;
-}
-
-/* Button in der Mitte */
-.btn-buchen {
-  background: #333;
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.btn-buchen:hover {
-  background: #555;
-}
-
-/* Link-Liste links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 0.3rem 0.5rem;
-  transition: color 0.3s, background 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #555;
-}
-
-.top-nav nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Links links */
-.nav-left,
-.nav-right {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-text {
-  text-decoration: none;
-  color: #333;       /* dunkelgrau */
-  font-weight: 500;
-  padding: 0;         /* keine Buttons */
-}
-
-.nav-text:hover {
-  color: #555;
-}
-
-.top-nav nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Links links */
-.nav-left,
-.nav-right {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-text {
-  text-decoration: none;
-  color: #333;       /* dunkelgrau */
-  font-weight: 500;
-  padding: 0;         /* keine Buttons */
-}
-
-.nav-text:hover {
-  color: #555;
 }
