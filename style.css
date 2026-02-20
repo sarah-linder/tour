@@ -188,7 +188,7 @@ main a:hover {
 .menu-list li a {
   display: block;
   padding: 0.8rem 1rem;
-  color: #000;
+  color: #333;
   text-decoration: none;
   border-radius: 0;
 }
