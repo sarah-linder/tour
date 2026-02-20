@@ -70,14 +70,7 @@ figcaption {
 
 /* Weiter / Zurück Buttons */
 .station-nav {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.6rem 1rem;
-
-  background: #222;
-  z-index: 1000;
+  position: static;
 }
 
 /* Buttons */
@@ -96,7 +89,7 @@ figcaption {
 }
 
 main {
-  padding-top: 1rem;
+  padding-top: 80px;
 }
 
 main section {
@@ -130,5 +123,29 @@ main a {
 
 main a:hover {
   background: #2980b9;
+}
+
+.btn-zurueck,
+.btn-weiter {
+  position: fixed;
+  top: 1rem;
+  z-index: 1000;
+
+  background: #333;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Links positionieren */
+.btn-zurueck {
+  left: 1rem;
+}
+
+/* Rechts positionieren */
+.btn-weiter {
+  right: 1rem;
 }
 
