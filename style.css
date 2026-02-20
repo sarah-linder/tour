@@ -285,3 +285,33 @@ main a:hover {
   cursor: pointer;
 }
 
+/* Tourenübersicht */
+.touren-übersicht {
+  margin: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.touren-übersicht .tour {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.touren-übersicht .tour h2 {
+  margin-top: 0;
+}
+
+.touren-übersicht .btn-info {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #333;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
