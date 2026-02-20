@@ -2,64 +2,108 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Stadtführungen</title>
+  <title>Stadtführungen – Startseite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>Willkommen zur Stadtführung 👋</h1>
-  <p>
-    Hier findest du Zusatzinformationen zu unseren Führungen – Texte, Bilder und Hintergründe zu jeder Station.
-  </p>
+  <h1>Willkommen zu unseren Stadtführungen</h1>
 </header>
 
+<!-- Ausklappmenü -->
 <nav class="menu">
   <button class="menu-toggle">☰</button>
   <ul class="menu-list">
-    <li><a href="/index.html">Startseite</a></li>
-    <li><a href="/faq.html">FAQ</a></li>
-    <li><a href="/touren.html">Touren</a></li>
-    <li><a href="/feedback.html">Feedback / Bewertungen</a></li>
-    <li><a href="/kontakt.html">Kontakt</a></li>
-    <li><a href="/impressum.html">Rechtliches</a></li>
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="touren.html">Touren</a></li>
+    <li><a href="feedback.html">Feedback / Bewertungen</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="impressum.html">Rechtliches</a></li>
   </ul>
 </nav>
 
 <main>
 
-  <section>
-    <h2>45min Tour Innenstadt</h2>
-    <ul>
-      <li><a href="stationen/Kehlturm.html?tour=45min-innenstadt-kehlturm">Start Kehlturm</a></li>
-      <li><a href="stationen/Tourist-Info.html?tour=45min-innenstadt-tourist-info">Start Tourist Info</a></li>
-    </ul>
+  <!-- Begrüßungstext -->
+  <section class="begrüßung">
+    <p>
+      Schön, dass Sie hier sind! Entdecken Sie unsere Stadtführungen und erfahren Sie mehr über die Geschichte, Architektur und besondere Orte unserer Innenstadt. Wählen Sie aus 45- oder 90-Minuten-Touren und lassen Sie sich von spannenden Geschichten begleiten.
+    </p>
   </section>
 
-  <section>
-    <h2>90min Tour Innenstadt</h2>
-    <ul>
-      <li><a href="stationen/Kehlturm.html?tour=90min-innenstadt-kehlturm">Start Kehlturm</a></li>
-      <li><a href="stationen/Obertor.html?tour=90min-innenstadt-obertor">Start Obertor</a></li>
-    </ul>
+  <!-- Slideshow / Tourenübersicht -->
+  <section class="touren-slider">
+    <div class="slide active">
+      <h2>45 Minuten Innenstadt</h2>
+      <p>Kurze Tour mit den Highlights der Innenstadt, ideal für erste Eindrücke.</p>
+      <a href="touren.html" class="btn-info">Mehr Infos</a>
+    </div>
+    <div class="slide">
+      <h2>90 Minuten Innenstadt</h2>
+      <p>Umfassende Tour durch alle wichtigen Stationen, inklusive kleiner Geheimtipps.</p>
+      <a href="touren.html" class="btn-info">Mehr Infos</a>
+    </div>
+    <div class="slide">
+      <h2>LAGA Touren</h2>
+      <p>Entdecken Sie das LAGA-Gelände mit unseren speziellen Rundgängen.</p>
+      <a href="touren.html" class="btn-info">Mehr Infos</a>
+    </div>
+
+    <!-- Navigationspfeile für Slider -->
+    <button class="prev-slide">⬅</button>
+    <button class="next-slide">➡</button>
   </section>
 
-  <section>
-    <h2>45min Tour LAGA</h2>
-    <ul>
-      
-    </ul>
+  <!-- FAQs -->
+  <section class="faq-link">
+    <a href="faq.html" class="btn-info">Zu den FAQs</a>
   </section>
 
-  <section>
-    <h2>90min Tour LAGA</h2>
-    <ul>
-      
-    </ul>
+  <!-- Kontaktformular -->
+  <section class="kontaktformular">
+    <h2>Kontaktieren Sie uns</h2>
+    <form action="mailto:info@stadtfuehrungen.de" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="nachricht">Nachricht:</label>
+      <textarea id="nachricht" name="nachricht" rows="4" required></textarea>
+
+      <button type="submit">Absenden</button>
+    </form>
   </section>
 
 </main>
+
+<!-- Skripte -->
+<script src="assets/js/menu.js"></script>
+<script>
+  // Slideshow-Logik
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".touren-slider .slide");
+    let index = 0;
+
+    const showSlide = (i) => {
+      slides.forEach((s, idx) => s.classList.toggle("active", idx === i));
+    }
+
+    document.querySelector(".next-slide").addEventListener("click", () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    });
+
+    document.querySelector(".prev-slide").addEventListener("click", () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    });
+  });
+</script>
 
 </body>
 </html>
