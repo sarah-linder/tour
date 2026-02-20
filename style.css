@@ -352,3 +352,17 @@ main a:hover {
   line-height: 1.5;
 }
 
+/* FAQ-Buttons einheitlich, kleiner als Slideshow-Touren-Buttons */
+.faq a.btn-info {
+  background: #333;       /* gleiche Farbe wie Touren-Buttons */
+  color: white;
+  padding: 0.4rem 0.8rem; /* kleiner als Touren-Buttons */
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.faq a.btn-info:hover {
+  background: #555;
+}
+
