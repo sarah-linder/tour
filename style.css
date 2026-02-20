@@ -115,7 +115,7 @@ main li {
 main a {
   display: inline-block;
   text-decoration: none;
-  background: #3498db;
+  background: #333;
   color: #fff;
   padding: 0.8rem 1.2rem;
   border-radius: 0.6rem;
